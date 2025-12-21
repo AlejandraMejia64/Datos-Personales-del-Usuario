@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap');
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(135deg, #12002f, #240046, #3c096c);
+    overflow-y: auto;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 50px 0;
+}
+
+/* 🌌 FONDO EN MOVIMIENTO */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background:
+        radial-gradient(circle at 10% 20%, rgba(76,201,240,0.18), transparent 40%),
+        radial-gradient(circle at 80% 30%, rgba(123,44,191,0.18), transparent 45%),
+        radial-gradient(circle at 50% 80%, rgba(76,201,240,0.15), transparent 40%);
+    animation: ondas 30s ease-in-out infinite alternate;
+    z-index: -1;
+}
+
+@keyframes ondas {
+    0% { transform: scale(1) translateY(0); }
+    100% { transform: scale(1.1) translateY(-40px); }
+}
+
+/* 💳 TARJETA */
+.card {
+    width: 380px;
+    padding: 30px;
+    border-radius: 22px;
+    background: rgba(18, 0, 47, 0.75);
+    backdrop-filter: blur(14px);
+    box-shadow:
+        0 0 20px rgba(76,201,240,0.25),
+        0 0 40px rgba(123,44,191,0.2);
+    animation: entrada 1.1s ease;
+}
+
+/* ✨ ENTRADA */
+@keyframes entrada {
+    from {
+        opacity: 0;
+        transform: translateY(50px) scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* ⚡ TÍTULO */
+.titulo {
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 25px;
+    color: #4cc9f0;
+    text-shadow: 0 0 10px rgba(76,201,240,0.6);
+    animation: pulso 3s infinite;
+}
+
+@keyframes pulso {
+    0%, 100% { text-shadow: 0 0 10px rgba(76,201,240,0.6); }
+    50% { text-shadow: 0 0 25px rgba(123,44,191,0.8); }
+}
+
+/* 📦 DATOS */
+.dato {
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 14px;
+    background: linear-gradient(135deg, rgba(76,201,240,0.15), rgba(123,44,191,0.15));
+    border: 1px solid rgba(76,201,240,0.3);
+    transition: all 0.4s ease;
+}
+
+/* 🖱️ HOVER */
+.dato:hover {
+    transform: translateY(-6px) scale(1.03);
+    box-shadow:
+        0 0 15px rgba(76,201,240,0.6),
+        0 0 25px rgba(123,44,191,0.6);
+}
+
+/* 🏷️ LABEL */
+.dato h2 {
+    margin: 0 0 6px 0;
+    font-size: 13px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #b8b2ff;
+}
+
+/* 📝 TEXTO */
+.dato p {
+    margin: 0;
+    font-size: 17px;
+    color: #f1eeff;
+    animation: aparecerTexto 0.8s ease;
+}
+
+@keyframes aparecerTexto {
+    from {
+        opacity: 0;
+        transform: translateX(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
