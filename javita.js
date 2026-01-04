@@ -14,11 +14,15 @@ let pesolibras = pesokilos * kilos_a_libras;
 let hoy = new Date();
 let edad = hoy.getFullYear() - FechaNacimiento.getFullYear();
 
-
-
 document.write("<div class='card'>");
+
+// TÍTULO
 document.write("<h1 class='titulo'>Datos Personales del Usuario</h1>");
-document.write("<h1 class='dato'> Bienvenido/a " + nombre + ". Agradezco su colaboración con los datos. </h1>");
+
+// MENSAJE DE BIENVENIDA (fuera de los cuadros)
+document.write("<p class='bienvenida'>Bienvenido/a " + nombre + 
+". Agradezco su colaboración con los datos.</p>");
+
 // NOMBRE
 document.write("<div class='dato'><h2>Nombre</h2><p>" + nombre + "</p></div>");
 
@@ -32,7 +36,7 @@ if (genero === "Masculino" || genero === "masculino") {
 } else if (genero === "Femenino" || genero === "femenino") {
     document.write("<p>Femenino ♀</p>");
 } else {
-    document.write("<p>No mencionó género Válido</p>");
+    document.write("<p>No mencionó género válido</p>");
 }
 document.write("</div>");
 
@@ -46,5 +50,3 @@ document.write("<div class='dato'><h2>Peso</h2><p>" + pesolibras.toFixed(2) + " 
 document.write("<div class='dato'><h2>Altura</h2><p>" + alturametros.toFixed(2) + " metros</p></div>");
 
 document.write("</div>");
-
-
