@@ -8,11 +8,25 @@ let genero = prompt("Ingrese su género (Masculino/Femenino):");
 const pulgadas_a_metros = 0.0254;
 const kilos_a_libras = 2.20462;
 
+// CONVERSIONES
 let alturametros = alturapulgadas * pulgadas_a_metros;
 let pesolibras = pesokilos * kilos_a_libras;
 
+// FECHA ACTUAL
 let hoy = new Date();
+
+// CALCULO DE EDAD CORRECTO
 let edad = hoy.getFullYear() - FechaNacimiento.getFullYear();
+
+let mesActual = hoy.getMonth();
+let mesNacimiento = FechaNacimiento.getMonth();
+
+if (
+    mesActual < mesNacimiento ||
+    (mesActual === mesNacimiento && hoy.getDate() < FechaNacimiento.getDate())
+) {
+    edad--;
+}
 
 document.write("<div class='card'>");
 
@@ -50,4 +64,5 @@ document.write("<div class='dato'><h2>Peso</h2><p>" + pesolibras.toFixed(2) + " 
 document.write("<div class='dato'><h2>Altura</h2><p>" + alturametros.toFixed(2) + " metros</p></div>");
 
 document.write("</div>");
+
 
