@@ -20,8 +20,8 @@ document.write("<div class='card'>");
 document.write("<h1 class='titulo'>Datos Personales del Usuario</h1>");
 
 // MENSAJE DE BIENVENIDA (fuera de los cuadros)
-document.write("<p class='bienvenida'>Bienvenido/a " + nombre + 
-". Agradezco su colaboración con los datos.</p>");
+document.write("<h1 class='titulo'>Bienvenido/a " + nombre + 
+". Agradezco su colaboración con los datos.</h1>");
 
 // NOMBRE
 document.write("<div class='dato'><h2>Nombre</h2><p>" + nombre + "</p></div>");
@@ -50,3 +50,4 @@ document.write("<div class='dato'><h2>Peso</h2><p>" + pesolibras.toFixed(2) + " 
 document.write("<div class='dato'><h2>Altura</h2><p>" + alturametros.toFixed(2) + " metros</p></div>");
 
 document.write("</div>");
+
